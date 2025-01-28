@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const planRoute = require('./Routes/planRoute')
+const path = require('path')
 const PORT = 8000
 
 const app = express()
@@ -17,7 +18,7 @@ async function main() {
 main()
 
 app.get('/', (req, res) => {
-    res.status(200).json({message: "Server running"})
+    res.status(200).sendFile(path.join(__dirname + '/index.html'))
 })
 
 app.use('/plan', planRoute)

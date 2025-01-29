@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
     res.status(200).sendFile(path.join(__dirname + '/index.html'))
 })
 
-app.use('/plan', planRoute)
+app.use('/plans', planRoute)
 
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`)
